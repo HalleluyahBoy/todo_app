@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Add Reminder</title>
-  </head>
-  <body>
+{% extends 'base.html' %}
+
+{% block title %}Add Reminder{% endblock %}
+
+{% block content %}
     <h1>Add Reminder</h1>
-    <form method="post" action="/add_reminder">
-      <label for="user_id">User ID:</label>
-      <input type="text" name="user_id"><br>
-      <label for="reminder">Reminder:</label>
-      <input type="text" name="reminder"><br>
-      <label for="date_time">Date and Time:</label>
-      <input type="datetime-local" name="date_time"><br>
-      <input type="submit" value="Add Reminder">
+    <form method="POST">
+        <label for="user_id">User ID:</label>
+        <input type="text" name="user_id" required><br>
+
+        <label for="reminder">Reminder:</label>
+        <input type="text" name="reminder" required><br>
+
+        <label for="date_time">Date and Time:</label>
+        <input type="datetime-local" name="date_time" required><br>
+
+        <input type="submit" value="Add Reminder">
     </form>
-  </body>
-</html>
+{% endblock %}
